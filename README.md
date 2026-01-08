@@ -105,19 +105,4 @@ The primary goals of this analysis include:
 
 The analytic sample comprised 106,285 adults from the 2018 BRFSS, representing a broad demographic range. Most respondents identified as straight or not gay (93.6%), with bisexual (3.1%), lesbian or gay (2.1%), and “something else” (1.3%) groups also represented. Females made up 58% of the sample, and the majority were White, non-Hispanic (77%). Nearly 44% were aged 60 years or older, and about 74% reported annual incomes below $50,000. On average, participants reported 7 poor mental-health days and 5 poor physical-health days in the past month; 31% had been diagnosed with a depressive disorder. Most respondents had health-insurance coverage (92%), and smoking habits were mixed, with 52% never having smoked.
 
-### Table 2. Participant Characteristics Stratified by Sexual Orientation  
-
-| **Characteristic** | **Straight (n = 99,446)** | **Lesbian/Gay (n = 2,213)** | **Bisexual (n = 3,280)** | **Something Else (n = 1,346)** |
-|--------------------:|:-------------------------:|:----------------------------:|:-------------------------:|:------------------------------:|
-| **Sex (% Female)** | 57.9 | 42.9 | 69.3 | 59.5 |
-| **Age ≥ 60 yrs (%)** | 45.2 | 29.6 | 16.5 | 42.1 |
-| **Race – White non-Hispanic (%)** | 77.6 | 75.2 | 72.6 | 67.2 |
-| **Income < $50k (%)** | 53.7 | 53.6 | 63.1 | 71.0 |
-| **Obese (%)** | 36.4 | 33.9 | 37.4 | 33.4 |
-| **Depressive disorder diagnosis (%)** | 29.6 | 42.6 | 52.8 | 44.0 |
-| **Poor mental-health days (mean ± SD)** | 6.9 ± 9.9 | 8.6 ± 10.3 | 11.1 ± 10.9 | 10.2 ± 11.3 |
-| **Health insurance coverage (%)** | 92.5 | 91.9 | 87.7 | 87.2 |
-| **Never smoked (%)** | 52.0 | 46.2 | 49.9 | 55.5 |
-
-Significant differences were observed between straight and non-straight participants across most demographic and health variables, except for health-insurance coverage (p = 0.512). Non-straight respondents were more likely to be male, younger, and current smokers. They also reported more poor mental-health days and a higher prevalence of depressive disorder (43 % vs 31 %). 
 
