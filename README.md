@@ -1,6 +1,8 @@
 # Exploratory-Analysis-BRFSS-2018-Data
 
-- **Overview**: The analysis investigates relationships between key health outcomes and demographic factors, utilizing a subset of BRFSS data with 106,285 observations across 12 variables, including sexual orientation, mental health, and cardiovascular health. [https://www.cdc.gov/brfss/](https://www.cdc.gov/brfss/)
+This project demonstrates applied regression modeling, effect modification assessment, and transparent reporting using large-scale public health survey data.
+
+- **Overview**: The analysis investigates relationships between key health outcomes and demographic factors, utilizing a subset of BRFSS data with 106,285 observations across 12 variables, including sexual orientation, mental health, and health-related covariates. [https://www.cdc.gov/brfss/](https://www.cdc.gov/brfss/)
 
 ## Data Description
 - **Dataset**: A subset of the BRFSS 2018 dataset with 106,285 observations and 12 variables, collected from noninstitutionalized U.S. adults aged 18+ via telephone surveys.
@@ -163,4 +165,142 @@ The analytic sample comprised 106,285 adults from the 2018 BRFSS, representing a
 - Depressive disorders were substantially more prevalent among sexual minorities, affecting 52.77% of bisexual individuals, 43.98% of those identifying as “something else,” and 42.61% of lesbian/gay participants, compared with 29.57% among straight participants.
 
 - Average poor mental health burden was higher among sexual minorities, with bisexual participants reporting a mean of 11.05 days of poor mental health in the past 30 days, compared with 6.87 days among straight participants.
+
+### Table 3: Association Between Poor Mental Health Days and Sexual Orientation
+
+| Characteristic                               | Measure of Effect (β, 95% CI) | P-value |
+| -------------------------------------------- | ----------------------------: | ------: |
+| **Sexual Orientation**                       |                               |         |
+| Straight/not gay (ref)                       |                          0.00 |       — |
+| Lesbian/Gay                                  |       1.1790 (0.7713, 1.5866) | <0.0001 |
+| Bisexual                                     |       2.4543 (2.1134, 2.7952) | <0.0001 |
+| Something else                               |       2.6512 (2.1275, 3.1749) | <0.0001 |
+| **Sex**                                      |                               |         |
+| Male (ref)                                   |                          0.00 |       — |
+| Female                                       |       1.0825 (0.9624, 1.2026) | <0.0001 |
+| **Race/Ethnicity**                           |                               |         |
+| White, Non-Hispanic (ref)                    |                          0.00 |       — |
+| Black, Non-Hispanic                          |    −0.3177 (−0.5258, −0.1097) |  0.0028 |
+| Asian, Non-Hispanic                          |    −1.2726 (−1.6666, −0.8785) | <0.0001 |
+| American Indian/Alaskan Native, Non-Hispanic |       1.1250 (0.6614, 1.5887) | <0.0001 |
+| Hispanic                                     |     −0.2293 (−0.4903, 0.0317) |  0.0851 |
+| Other race, Non-Hispanic                     |       0.7220 (0.4292, 1.0149) | <0.0001 |
+| **Age Category**                             |                               |         |
+| 18–29 (ref)                                  |                          0.00 |       — |
+| 30–39                                        |    −0.9891 (−1.2323, −0.7460) | <0.0001 |
+| 40–59                                        |    −1.1419 (−1.3476, −0.9362) | <0.0001 |
+| 60 and older                                 |    −3.6062 (−3.8089, −3.4035) | <0.0001 |
+| **Income Category**                          |                               |         |
+| Less than $50,000 (ref)                      |                          0.00 |       — |
+| $50,000 or more                              |    −2.5905 (−2.7159, −2.4652) | <0.0001 |
+| **BMI Category**                             |                               |         |
+| Normal weight (ref)                          |                          0.00 |       — |
+| Underweight                                  |       1.2235 (0.7842, 1.6628) | <0.0001 |
+| Overweight                                   |       0.1950 (0.0448, 0.3451) |  0.0109 |
+| Obese                                        |       1.0718 (0.9243, 1.2193) | <0.0001 |
+| **Health Insurance**                         |                               |         |
+| No (ref)                                     |                          0.00 |       — |
+| Yes                                          |    −0.6492 (−0.8751, −0.4233) | <0.0001 |
+| **Smoking Status**                           |                               |         |
+| Never smoked (ref)                           |                          0.00 |       — |
+| Current smoker – daily                       |       4.2994 (4.1159, 4.4828) | <0.0001 |
+| Current smoker – some days                   |       3.2445 (2.9733, 3.5158) | <0.0001 |
+| Former smoker                                |       1.1688 (1.0307, 1.3068) | <0.0001 |
+
+- Sexual orientation was independently associated with poor mental health days. Compared with straight participants, adjusted mean days were higher among lesbian/gay (β = 1.18), bisexual (β = 2.45), and “something else” participants (β = 2.65) (all p < 0.0001).
+
+- Female sex was associated with a modest increase in poor mental health days compared with males (β = 1.08; p < 0.0001).
+
+- Older age was strongly protective, with participants aged 60 years or older reporting 3.61 fewer poor mental health days compared with those aged 18–29 (p < 0.0001).
+
+- Higher income was associated with fewer poor mental health days (β = −2.59; p < 0.0001).
+
+- Smoking status showed the largest effect sizes, with daily smokers reporting 4.30 additional poor mental health days compared with never smokers (p < 0.0001).
+
+### Table 4: Association Between Sexual Orientation and Depressive Disorder
+
+Multivariable logistic regression was used to assess the association between sexual orientation and self-reported depressive disorder, adjusting for sex, race/ethnicity, age category, income category, BMI category, health insurance status, and smoking status. Note:  Odds ratios in this table correspond to the outcome “no depressive disorder” modeled as the event of interest.
+
+
+
+| Sexual Orientation | Adjusted Odds Ratio (95% CI) | P-value |
+|--------------------|------------------------------|---------|
+| Straight/not gay (ref) | 1.00 | — |
+| Lesbian/Gay | 0.546 (0.499, 0.597) | <0.0001 |
+| Bisexual | 0.446 (0.414, 0.481) | <0.0001 |
+| Something else | 0.536 (0.479, 0.600) | <0.0001 |
+
+- After adjustment for demographic, socioeconomic, and health-related covariates, sexual orientation was significantly associated with odds of reporting a depressive disorder.
+
+- Compared with straight participants, individuals identifying as lesbian/gay, bisexual, or “something else” had lower adjusted odds of reporting a depressive disorder (all p < 0.0001).
+
+- These associations persisted after controlling for sex, age, race/ethnicity, income, BMI category, health insurance status, and smoking status.
+
+### Table 5: Effect of Sexual Orientation Stratified by Age Category
+
+Age-stratified multivariable models were fit to evaluate whether age modified the association between sexual orientation and mental health outcomes. Models were adjusted for sex, race/ethnicity, income category, BMI category, health insurance status, and smoking status. Note: For age-stratified logistic regression models, odds ratios correspond to the outcome “ Yes depressive disorder” modeled as the event of interest.
+
+
+#### Poor Mental Health Days (β, 95% CI)
+
+| Sexual Orientation (vs. Straight/not gay) | 18–29 years | 30–39 years | 40–59 years | ≥60 years |
+|------------------------------------------|-------------|-------------|-------------|-----------|
+| Lesbian/Gay | 2.61 (1.73, 3.48) | 0.74 (0.34, 1.81) | 0.86 (0.14, 1.59) | 0.84 (0.12, 1.57) |
+| Bisexual | 3.48 (2.93, 4.04) | 2.81 (2.06, 3.56) | 1.67 (0.95, 2.38) | 0.87 (0.08, 1.67) |
+| Something else | 5.48 (4.40, 6.55) | 3.18 (1.73, 4.64) | 1.20 (0.03, 2.38) | 1.85 (1.07, 2.62) |
+
+Interaction p-value: <0.0001
+
+#### Depressive Disorder (OR, 95% CI)
+
+| Sexual Orientation (vs. Straight/not gay) | 18–29 years | 30–39 years | 40–59 years | ≥60 years |
+|------------------------------------------|-------------|-------------|-------------|-----------|
+| Lesbian/Gay | 2.31 (1.90, 2.81) | 2.01 (1.58, 2.55) | 1.77 (1.52, 2.06) | 1.63 (1.38, 1.92) |
+| Bisexual | 2.88 (2.54, 3.26) | 2.30 (1.95, 2.72) | 1.98 (1.71, 2.31) | 1.58 (1.32, 1.89) |
+| Something else | 4.10 (3.22, 5.22) | 2.14 (1.55, 2.95) | 1.60 (1.26, 2.04) | 1.30 (1.08, 1.55) |
+
+Interaction p-value: <0.0001
+
+- Age significantly modified the association between sexual orientation and both poor mental health days and depressive disorder (interaction p < 0.0001).
+
+- Across all age groups, sexual minority participants reported higher poor mental health burden and higher odds of depressive disorder compared with straight participants.
+
+- The magnitude of association was strongest among adults aged 18–29 and consistently attenuated with increasing age.
+
+- Bisexual individuals and those identifying as “something else” showed the largest effect sizes across age strata for both outcomes.
+
+## Discussion
+
+This analysis of the 2018 BRFSS data identifies meaningful disparities in mental health outcomes by sexual orientation. Several key patterns emerge from the descriptive, multivariable, and age-stratified analyses.
+
+### 1. Disparities Across Sexual Orientation Categories
+- Sexual minority groups consistently experienced poorer mental health outcomes compared with straight individuals.
+- Bisexual individuals demonstrated the highest burden of poor mental health across multiple measures.
+- Individuals identifying as “something else” also showed elevated mental health challenges, particularly in younger age groups.
+### 2. Demographic Patterns
+- Sexual minority groups were disproportionately represented in younger age categories.
+- Gender distributions differed by sexual orientation, with a higher proportion of males among lesbian/gay respondents and a higher proportion of females among bisexual respondents.
+- Lower income levels were more common among bisexual individuals and those identifying as “something else,” suggesting potential socioeconomic vulnerability.
+### 3. Age as a Critical Modifier
+- The association between sexual orientation and mental health outcomes was strongest among younger adults.
+- Sexual minorities aged 18–29 exhibited the largest disparities in both poor mental health days and depressive disorder.
+- Although the magnitude of association decreased with age, disparities persisted across all age categories.
+### 4. Other Risk Factors
+- Female sex was independently associated with worse mental health outcomes, particularly for depressive disorder.
+- Lower income was strongly associated with increased mental health burden.
+- Racial and ethnic associations varied by outcome, indicating complex and non-uniform patterns across groups.
+
+## Repository Structure
+
+- `00_run_all.sas`: Master script to execute the full analytic pipeline  
+- `01_import_and_formats.sas`: Data import, formatting, and preprocessing  
+- `02_clean_and_label.sas`: Data cleaning, recoding, and variable labeling  
+- `03_descriptives_bivariate.sas`: Descriptive statistics and bivariate analyses  
+- `04_model_menthlth.sas`: Adjusted linear regression for poor mental health days  
+- `05_model_depression.sas`: Adjusted logistic regression for depressive disorder  
+- `06_age_stratified_models.sas`: Age-stratified models and interaction analyses  
+
+## Software
+
+All analyses were conducted using SAS statistical software.
 
